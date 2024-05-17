@@ -1,11 +1,21 @@
 /* styles.css */
 
-body {
-    font-family: Arial, sans-serif;
+html, body {
     margin: 0;
     padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     color: #333;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
 }
 
 header {
@@ -15,19 +25,57 @@ header {
     text-align: center;
 }
 
-nav ul {
+.navbar {
     list-style-type: none;
     padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color: #333;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 10px;
+.navbar li {
+    float: left;
 }
 
-nav ul li a {
-    color: white;
+.navbar li a, .dropdown .dropbtn {
+    display: inline-block;
+    color: lightgray;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
+}
+
+.navbar li a:hover, .dropdown:hover .dropbtn {
+    background-color: #111;
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 section {
@@ -47,9 +95,6 @@ footer {
     padding: 1em 0;
     background-color: #4CAF50;
     color: white;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
 }
 
 form label {
